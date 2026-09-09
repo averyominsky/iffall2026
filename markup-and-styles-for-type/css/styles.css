@@ -4,10 +4,46 @@ html {
   font-size: 15pt;
 }
 
+body {
+    margin: 10%;
+}
+
 h1 {
-  color: black
+  color: black;
+  letter-spacing: -0.02em;
 }
 
 p {
     font-size: 13pt;
+    line-height: 1.4;
+}
+
+sup { 
+    font-size: 0.6rem;
+}
+
+dfn {
+    font-weight: bold;
+    color: red
+}
+
+small { 
+    font-style: italic;
+}
+
+aside {
+    text-align: center;
+}
+
+cite {
+    text-align: right;
+    display: block;
+}
+
+article {
+    margin: 6rem 0;
+}
+
+section {
+     margin: 2.5rem 0;
 }
