@@ -11,6 +11,8 @@ body {
 h1 {
   color: black;
   letter-spacing: -0.02em;
+  text-transform: capitalize;
+  text-indent: -1rem;
 }
 
 p {
@@ -19,12 +21,13 @@ p {
 }
 
 sup { 
-    font-size: 0.6rem;
+    font-size: 60%;
 }
 
 dfn {
     font-weight: bold;
-    color: red
+    color: red;
+    text-transform: lowercase
 }
 
 small { 
@@ -46,4 +49,12 @@ article {
 
 section {
      margin: 2.5rem 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+code {
+    color: steelblue;
 }
