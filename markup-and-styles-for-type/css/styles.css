@@ -1,6 +1,8 @@
 html {
   color: grey;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: "Roboto Condensed", sans-serif;
+  
   font-size: 15pt;
 }
 
@@ -13,6 +15,7 @@ h1 {
   letter-spacing: -0.02em;
   text-transform: capitalize;
   text-indent: -1rem;
+  font-family: vista-slab, serif;
 }
 
 p {
@@ -57,4 +60,14 @@ a {
 
 code {
     color: steelblue;
+}
+
+.fa-fish {
+    font-size: .8em; 
+    color: green
+}
+
+.fa-face-grin-hearts {
+    font-size: .8em; 
+    color: green
 }
