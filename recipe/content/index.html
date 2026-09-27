@@ -25,10 +25,17 @@
         margin-top: 50px;
     }
 
-    img {
-        width: 500px;
-        max-width: 100%;
-    }
+img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
 
 
 </style>
@@ -64,11 +71,16 @@
     </p>
 
 
-    <h2>Sample Imagery</h2>
+<h2>Sample Imagery</h2>
 
-    <img src="salmon.jpg">
-
-
+<div class="image-grid">
+    <img src="salmon.jpg" alt="salmon kushiyaki skewers">
+    <img src="salmon2.jpg" alt="grilled salmon close-up">
+    <img src="salmon3.jpg">
+    <img src="salmon4.jpg" alt="ingredients laid out">
+    <img src="salmon5.jpg" alt="marinade being brushed on">
+    <img src="salmon6.jpg" alt="finished dish garnished">
+</div>
 
     <h2>Ingredients</h2>
 
