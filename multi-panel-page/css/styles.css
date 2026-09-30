@@ -9,6 +9,13 @@ h1 {
     line-height: 1;
 }
 
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    line-height: 1;
+}
+
 .content-column {
     background-color: rgba(0,0,0,.25);
     width: 1000px;
