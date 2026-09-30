@@ -17,11 +17,22 @@ h2 {
     line-height: 1;
 }
 
+h3 {
+    size: 40px;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    line-height: 1;
+    margin-bottom: 28px;
+
+}
+
 .content-column {
     background-color: rgba(0,0,0,.25);
-    width: 1000px;
+    width: 960px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 20px;
 }
 
 header {
@@ -38,4 +49,9 @@ header.content-column {
 
 section:first-of-type {
     background-color: rgba(0,0,255,.25);
+}
+
+section:first-of-type img {
+    float: right;
+    boarder: 1px solid darkblue 
 }
