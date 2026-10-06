@@ -48,7 +48,7 @@ h3 {
 
 /* ---------- Header ---------- */
 header {
-    background-image: url(../images/header.webp);
+    background-image: url(../images/jessie8.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -60,7 +60,6 @@ header .content-column {
 
 /* ---------- Section 1: intro with image wrap ---------- */
 section:nth-of-type(1) {
-    background-image: url(../images/bg-intro.webp);
     background-size: cover;
     background-position: center;
 }
