@@ -144,58 +144,11 @@ section:nth-of-type(3) .lead {
     
 }
 
-/* ---------- Footer ---------- */
-footer {
-    background-image: url(../images/bg-footer.webp);
-    background-size: cover;
-    background-position: center;
-}
 
 footer .content-column {
+    font-size: 18px;
     padding-top: 40px;
     padding-bottom: 40px;
 }
 
-footer p {
-    font-size: 18px;
-}
 
-/* ---------- Narrow screens ---------- */
-@media (max-width: 1000px) {
-    .content-column {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-
-@media (max-width: 760px) {
-    h1 { font-size: 56px; }
-    h3 { font-size: 32px; }
-
-    header .content-column {
-        padding-top: 100px;
-        padding-bottom: 110px;
-    }
-
-    section:nth-of-type(1) img {
-        float: none;
-        display: block;
-        width: 100%;
-        height: auto;
-        margin: 0 0 20px;
-    }
-
-    .photo-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .photo-item img {
-        width: 140px;
-        height: 105px;
-    }
-
-    .photo-item div {
-        width: auto;
-        flex: 1;
-    }
-}
