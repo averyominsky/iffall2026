@@ -1,9 +1,23 @@
+/* ---------- Base ---------- */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Archivo Narrow", sans-serif;
+    color: #000000;
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
 }
 
 h1 {
-    margin: 0;
     text-align: center;
     font-size: 80px;
     line-height: 1;
@@ -11,30 +25,28 @@ h1 {
 }
 
 h2 {
-    font-size: 30px;
     text-align: center;
-    margin: 0;
+    font-size: 30px;
     line-height: 1;
 }
 
 h3 {
-    size: 40px;
     text-align: center;
     font-size: 40px;
-    margin: 0;
     line-height: 1;
-    margin-bottom: 28px;
-
+    margin-bottom: 38px;
 }
 
 .content-column {
-    background-color: rgba(0,0,0,.25);
     width: 960px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 20px;
+    padding: 48px 0 60px;
+    display: flow-root; /* contains floated images */
 }
 
+/* ---------- Header ---------- */
 header {
     background-image: url(../images/header.webp);
     background-size: cover;
@@ -42,25 +54,149 @@ header {
 }
 
 header .content-column {
-    background-color: transparent;
     padding-top: 166px;
     padding-bottom: 188px;
 }
 
-section:first-of-type {
-    background-color: rgba(0,0,255,.25);
+/* ---------- Section 1: intro with image wrap ---------- */
+section:nth-of-type(1) {
+    background-image: url(../images/bg-intro.webp);
+    background-size: cover;
+    background-position: center;
 }
 
-section:first-of-type img {
-    float: right;
-    border: 1px solid darkblue;
-}
-
-section:first-of-type img {
+section:nth-of-type(1) img {
     float: right;
     width: 400px;
     height: 300px;
     object-fit: cover;
     margin: 0 0 20px 24px;
     border: 1px solid darkblue;
+}
+
+section:nth-of-type(1) p {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+/* ---------- Section 2: photo grid ---------- */
+section:nth-of-type(2) {
+    background-image: url(../images/bg-gallery.webp);
+    background-size: cover;
+    background-position: center;
+    color: #1a1d24; /* text color only, dark on the light image */
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 0;
+}
+
+.photo-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.photo-item img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.photo-item div {
+    width: 230px;
+    margin: 0;
+    padding: 0;
+}
+
+.photo-item h4 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.photo-item p {
+    font-size: 18px;
+}
+
+/* ---------- Section 3: centered text ---------- */
+section:nth-of-type(3) {
+    background-image: url(../images/bg-closing.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+section:nth-of-type(3) .content-column {
+    padding-bottom: 100px;
+    padding-top: 30px;
+    padding-bottom: 100px;
+
+}
+
+section:nth-of-type(3) .lead {
+    width: 710px;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 26px;
+    text-align: center;
+    
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-image: url(../images/bg-footer.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+footer .content-column {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+footer p {
+    font-size: 18px;
+}
+
+/* ---------- Narrow screens ---------- */
+@media (max-width: 1000px) {
+    .content-column {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 760px) {
+    h1 { font-size: 56px; }
+    h3 { font-size: 32px; }
+
+    header .content-column {
+        padding-top: 100px;
+        padding-bottom: 110px;
+    }
+
+    section:nth-of-type(1) img {
+        float: none;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 0 20px;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-item img {
+        width: 140px;
+        height: 105px;
+    }
+
+    .photo-item div {
+        width: auto;
+        flex: 1;
+    }
 }
