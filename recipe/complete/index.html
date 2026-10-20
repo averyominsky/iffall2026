@@ -18,6 +18,7 @@
             margin: 0;
         }
 
+        
         h1, h2, h3, h4, p {
             margin: 0;
         }
@@ -81,16 +82,25 @@
             background-repeat: no-repeat;
         }
 
+        header .recipe-details {
+        color: #b73700;
+        font-size: 16px;
+        font-weight: 400;
+        transform: translateY(120px);
+        text-align: left;
+        }
+
+        
         header h1, 
         header h2 {
             color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
             text-align: left;
         }
 
         header .content-column {
-            padding-top: 140px;
+            padding-top: 95px;
             padding-bottom: 150px;
+
         }
 
         /* ---------- Intro ---------- */
@@ -99,12 +109,16 @@
         }
 
         .intro img {
-            float: right;
+            float: left;
             width: 400px;
             height: 300px;
             object-fit: cover;
-            margin: 0 0 20px 24px;
+            margin: 20px 40px 0 0;
             border: 1px solid rgb(0, 0, 0);
+        }
+
+        header h3 {
+            color: #b73700;
         }
 
         .intro p {
@@ -309,25 +323,32 @@
 
 <body>
 
-    <header>
-        <div class="content-column">
-            <h1>Salmon Kushiyaki</h1>
-            <h2>Miso-glazed salmon and shiitake, <i>grilled</i> on a skewer.</h2>
-        </div>
-    </header>
+   
+<header>
+    <div class="content-column">
+        <h1>Salmon Kushiyaki</h1>
+        <h2>Miso-glazed salmon and shiitake, <i>grilled</i> on a skewer.</h2>
+
+        <p class="recipe-details">
+            Level <strong>Easy</strong> &nbsp; | &nbsp;
+            Cook <strong>35 min</strong> &nbsp; | &nbsp;
+            Total <strong>6 hours 45 minutes</strong> &nbsp; | &nbsp;
+            Serves <strong>4</strong>
+        </p>
+    </div>
+</header>
+
 
     <!-- Intro -->
     <section class="intro">
         <div class="content-column">
             <h3>About the dish</h3>
 
-            <img src="salmonheade.jpg" alt="Salmon and shiitake kushiyaki skewers, glazed and grilled">
+            <img src="salmon0.jpg" alt="Salmon and shiitake kushiyaki skewers, glazed and grilled">
 
-            <p>Kushiyaki is the catch-all term for the popular Japanese technique of grilling skewered foods. This version is a play on surf and turf, pairing salmon with earthy shiitake mushrooms for a dose of umami.</p>
+            <p>This rendition of kushiyaki — the catch-all term for the popular Japanese technique of grilling skewered foods — is a play on a surf and turf, combining salmon with earthy shiitake mushrooms, for a dose of umami. Here the fish is first marinated in a mirin, sake and miso mixture; the same mixture is also brushed on the skewers during cooking for a burnished glaze. Finish the skewers with a generous shake of furikake or shichimi togarashi, two popular Japanese seasonings.
+            </p>
 
-            <p>The fish is first marinated in a mixture of mirin, sake and miso. The same mixture is brushed on the skewers during cooking for a burnished glaze. Finish with a generous shake of furikake or shichimi togarashi, two popular Japanese seasonings.</p>
-
-            <p>Level: Easy. Yield: 4 servings. Active time: 35 minutes. Total time: 6 hours 45 minutes, most of it marinating.</p>
         </div>
     </section>
 
@@ -407,13 +428,7 @@
             <h3>Sample imagery</h3>
 
             <div class="photo-grid">
-                <div class="photo-item">
-                    <img src="salmon2.jpg" alt="Grilled salmon close-up">
-                    <div>
-                        <h4>Grilled salmon</h4>
-                        <p>A close look at the browned, caramelized surface of the glaze.</p>
-                    </div>
-                </div>
+          
 
                 <div class="photo-item">
                     <img src="salmon3.jpg" alt="Salmon kushiyaki">
@@ -432,7 +447,7 @@
                 </div>
 
                 <div class="photo-item">
-                    <img src="salmon5.jpg" alt="Marinade being brushed on">
+                    <img src="salmon6.jpg" alt="Marinade being brushed on">
                     <div>
                         <h4>Brushing the glaze</h4>
                         <p>The reserved marinade goes on near the end for a burnished finish.</p>
@@ -440,7 +455,7 @@
                 </div>
 
                 <div class="photo-item">
-                    <img src="salmon6.jpg" alt="Finished dish garnished">
+                    <img src="salmon5.jpg" alt="Finished dish garnished">
                     <div>
                         <h4>Finished dish</h4>
                         <p>Garnished with furikake or shichimi togarashi and ready to serve.</p>
@@ -470,7 +485,7 @@
     <footer>
         <div class="content-column">
             <p>Sources: <a href="https://www.foodnetwork.com/recipes/food-network-kitchen/salmon-kushiyaki-9876806">Food Network: Salmon Kushiyaki</a>, <a href="https://docs.google.com/document/d/1kvEclAfiSN8GyjtQfD8SSK8rel3B-HkG-wfBUqbjCt4/edit?usp=sharing">Recipe Research Evaluation</a></p>
-            <p>© Copyright 2026 By Avery Ominsky</p>
+            <p>© Avery Ominsky, Interaction Foundations 2026</p>
         </div>
     </footer>
 
