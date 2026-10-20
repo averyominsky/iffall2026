@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Salmon Kushiyaki</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            color: #000000;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4, p {
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 80px;
+            line-height: 1;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 500;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 40px;
+            line-height: 1;
+            margin-bottom: 38px;
+            font-weight: 700;
+        }
+
+        h4 {
+            font-size: 24px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        a {
+            color: #000000;
+        }
+
+        .content-column {
+            width: 960px;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 48px 0 60px;
+            display: flow-root;
+        }
+
+        /* ---------- Header ---------- */
+        header {
+            background-image: url('salmonheader.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header h1, 
+        header h2 {
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            text-align: left;
+        }
+
+        header .content-column {
+            padding-top: 140px;
+            padding-bottom: 150px;
+        }
+
+        /* ---------- Intro ---------- */
+        .intro {
+            background-color: #fbe4da;
+        }
+
+        .intro img {
+            float: right;
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            margin: 0 0 20px 24px;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        .intro p {
+            margin-bottom: 16px;
+        }
+
+        /* ---------- Ingredients ---------- */
+        .ingredients {
+            background-color: #ffffff;
+        }
+
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0 48px;
+        }
+
+        .ingredient-grid h4 {
+            margin: 32px 0 12px;
+        }
+
+        .ingredient-grid h4:first-child {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            font-size: 20px;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .ingredient-grid p {
+            margin-top: 8px;
+        }
+
+        /* ---------- Instructions ---------- */
+        .instructions {
+            background-color: #e3ecdf;
+        }
+
+        .steps {
+            width: 710px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .steps h4 {
+            margin: 32px 0 12px;
+        }
+
+        .steps h4:first-child {
+            margin-top: 0;
+        }
+
+        ol {
+            margin: 0;
+            padding: 0 0 0 32px;
+        }
+
+        ol li {
+            line-height: 1.35;
+            margin-bottom: 16px;
+            padding-left: 8px;
+        }
+
+        /* ---------- Gallery ---------- */
+        .gallery {
+            background-color: #fbe4da;
+        }
+
+        .gallery .content-column {
+            padding-top: 27px;
+            padding-bottom: 81px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px 0;
+        }
+
+        .photo-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .photo-item img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            flex: none;
+        }
+
+        .photo-item div {
+            width: 230px;
+        }
+
+        .photo-item h4 {
+            font-size: 20px;
+            line-height: 24px;
+            margin: 2px 0 8px;
+        }
+
+        .photo-item p {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        /* ---------- Closing ---------- */
+        .closing {
+            background-color: #f4a58a;
+        }
+
+        .closing .content-column {
+            padding-block: 30px 100px;
+        }
+
+        .closing .lead {
+            width: 710px;
+            max-width: 100%;
+            margin: 0 auto;
+            font-size: 26px;
+            text-align: center;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            background-color: #ffffff;
+        }
+
+        footer .content-column {
+            padding: 40px 0;
+        }
+
+        footer p {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* ---------- Responsive Design ---------- */
+        @media (max-width: 700px) {
+            .content-column {
+                padding-left: 20px;
+                padding-right: 20px;
+                box-sizing: border-box;
+            }
+
+            h1 {
+                font-size: 52px;
+            }
+
+            h2 {
+                font-size: 24px;
+                line-height: 1.1;
+            }
+
+            h3 {
+                font-size: 34px;
+            }
+
+            header .content-column {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+
+            .intro img {
+                float: none;
+                display: block;
+                width: 100%;
+                margin: 0 0 20px 0;
+            }
+
+            .ingredient-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-item img {
+                width: 40%;
+            }
+
+            .photo-item div {
+                width: auto;
+            }
+
+            .closing .lead {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="content-column">
+            <h1>Salmon Kushiyaki</h1>
+            <h2>Miso-glazed salmon and shiitake, <i>grilled</i> on a skewer.</h2>
+        </div>
+    </header>
+
+    <!-- Intro -->
+    <section class="intro">
+        <div class="content-column">
+            <h3>About the dish</h3>
+
+            <img src="salmonheade.jpg" alt="Salmon and shiitake kushiyaki skewers, glazed and grilled">
+
+            <p>Kushiyaki is the catch-all term for the popular Japanese technique of grilling skewered foods. This version is a play on surf and turf, pairing salmon with earthy shiitake mushrooms for a dose of umami.</p>
+
+            <p>The fish is first marinated in a mixture of mirin, sake and miso. The same mixture is brushed on the skewers during cooking for a burnished glaze. Finish with a generous shake of furikake or shichimi togarashi, two popular Japanese seasonings.</p>
+
+            <p>Level: Easy. Yield: 4 servings. Active time: 35 minutes. Total time: 6 hours 45 minutes, most of it marinating.</p>
+        </div>
+    </section>
+
+    <!-- Ingredients -->
+    <section class="ingredients">
+        <div class="content-column">
+            <h3>Ingredients</h3>
+
+            <div class="ingredient-grid">
+                <div>
+                    <h4>Marinade</h4>
+                    <ul>
+                        <li>&frac14; cup mirin</li>
+                        <li>&frac14; cup sake</li>
+                        <li>&frac14; cup packed light brown sugar</li>
+                        <li>&frac14; cup light miso</li>
+                    </ul>
+
+                    <h4>Equipment</h4>
+                    <ul>
+                        <li>Four 10-inch bamboo paddle skewers</li>
+                        <li>Grill</li>
+                    </ul>
+
+                    <p>No skewers or grill? Cut the salmon and mushrooms into bite-sized pieces and cook them in a frying pan instead.</p>
+                </div>
+
+                <div>
+                    <h4>Skewers</h4>
+                    <ul>
+                        <li>1&frac12; pounds center-cut, skin-on salmon, cut into 1-inch cubes</li>
+                        <li>6 shiitake mushrooms, stemmed and quartered</li>
+                        <li>Vegetable oil, for the grill grates</li>
+                        <li>Kosher salt</li>
+                        <li>Furikake or shichimi togarashi, for serving</li>
+                    </ul>
+
+                    <h4>Allergens</h4>
+                    <p>Fish: salmon. Soy: miso is typically made from soybeans. Wheat/gluten: may be present in miso or soy-based seasonings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructions -->
+    <section class="instructions">
+        <div class="content-column">
+            <h3>Instructions</h3>
+
+            <div class="steps">
+                <h4>Marinate</h4>
+                <ol>
+                    <li>Soak the skewers in water for 30 minutes.</li>
+                    <li>Bring the mirin and sake to a boil in a small saucepan over medium-high heat, then reduce to a simmer. Whisk in the brown sugar until dissolved, then the miso. Let cool.</li>
+                    <li>Set aside &frac14; cup of the marinade for brushing. Toss the salmon in the rest, cover, and refrigerate at least 6 hours, preferably overnight.</li>
+                </ol>
+
+                <h4>Grill</h4>
+                <ol start="4">
+                    <li>Heat a grill to medium-high. Lightly oil the grates.</li>
+                    <li>Blot the salmon dry. Thread salmon and shiitake onto each skewer, alternating.</li>
+                    <li>Sprinkle the skewers with salt. Grill about 1 minute per side, then keep turning for about 10 minutes more, until the shiitake are tender and the salmon is browned and cooked through.</li>
+                </ol>
+
+                <h4>Glaze and serve</h4>
+                <ol start="7">
+                    <li>Brush the reserved marinade over each skewer. Grill 2 to 3 minutes more, until the glaze is slightly caramelized.</li>
+                    <li>Remove from the grill and sprinkle with furikake or shichimi togarashi.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <div class="content-column">
+            <h3>Sample imagery</h3>
+
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="salmon2.jpg" alt="Grilled salmon close-up">
+                    <div>
+                        <h4>Grilled salmon</h4>
+                        <p>A close look at the browned, caramelized surface of the glaze.</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="salmon3.jpg" alt="Salmon kushiyaki">
+                    <div>
+                        <h4>Salmon kushiyaki</h4>
+                        <p>Salmon and shiitake threaded together on a skewer.</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="salmon4.jpg" alt="Ingredients laid out">
+                    <div>
+                        <h4>Ingredients</h4>
+                        <p>Everything for the marinade and skewers, laid out before cooking.</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="salmon5.jpg" alt="Marinade being brushed on">
+                    <div>
+                        <h4>Brushing the glaze</h4>
+                        <p>The reserved marinade goes on near the end for a burnished finish.</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="salmon6.jpg" alt="Finished dish garnished">
+                    <div>
+                        <h4>Finished dish</h4>
+                        <p>Garnished with furikake or shichimi togarashi and ready to serve.</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="salmon.jpg" alt="Salmon kushiyaki skewers">
+                    <div>
+                        <h4>The skewers</h4>
+                        <p>Salmon kushiyaki skewers, hot off the grill.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="closing">
+        <div class="content-column">
+            <h3>Serving and storage</h3>
+            <p class="lead">Serve hot, right after grilling. Refrigerate leftovers in an airtight container for up to 3 days, and reheat gently in a skillet or microwave until warmed through.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="content-column">
+            <p>Sources: <a href="https://www.foodnetwork.com/recipes/food-network-kitchen/salmon-kushiyaki-9876806">Food Network: Salmon Kushiyaki</a>, <a href="https://docs.google.com/document/d/1kvEclAfiSN8GyjtQfD8SSK8rel3B-HkG-wfBUqbjCt4/edit?usp=sharing">Recipe Research Evaluation</a></p>
+            <p>© Copyright 2026 By Avery Ominsky</p>
+        </div>
+    </footer>
+
+</body>
+</html>
