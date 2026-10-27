@@ -12,7 +12,9 @@
 		<link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
 
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-		
+
+<script src="https://kit.fontawesome.com/5664cbb649.js" crossorigin="anonymous"></script>
+
 		<style>
 
 			body {
@@ -47,27 +49,57 @@
 
 			a#btn_harleydavidson {
 				display: inline-block;
-				height: 50px;
+				height: 45px;
 				box-sizing: border-box;
-				border-radius: 25px;
 				margin: auto;
 				margin-top: 100px;
 				padding: 10px 40px 0 40px;
 				background-color: #F58220;
 				border: 2px solid #2B2E33;
 				color: #2B2E33;
-				font-size: 20px;
-				font-family: 'Montserrat', sans-serif;
+				font-size: 18px;
+				font-family: 'Archivo Black', sans-serif;
 				font-weight: bold;
 				text-decoration: none;
 				transition: all .5s;
 			}
-
 			a#btn_harleydavidson:hover {
 				background-color: #fff;
 				border: 2px solid #000;
 				color: #000;
 			}
+
+            a#btn_harleydavidson {
+  position: relative;
+  
+}
+
+a#btn_harleydavidson .bike {
+  position: absolute;
+  bottom: 100%;            
+  left: 0;                 
+  font-size: 30px;
+  line-height: 1;
+  color: #F58220;
+  pointer-events: none;
+}
+
+a#btn_harleydavidson:hover .bike {
+  animation: ride 1.2s ease-in-out forwards;
+}
+
+@keyframes ride {
+  0%   { left: -40px; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+
+
+
+
+
 
 			a#btn_ibm {
 				display: block;
@@ -99,7 +131,7 @@
 				padding: 10px 30px 0 30px;
 				background-color: #56cdf1;
 				color: #fff;
-				font-size: 18px;
+				font-size: 1px;
 				font-family: 'Arial', sans-serif;
 				font-weight: bold;
 				text-decoration: none;
@@ -172,7 +204,8 @@
 			<h1>Button Styling &mdash; Avery Ominsky</h1>
 			
 			<div class="button_container">
-				<a href="https://www.harley-davidson.com/us/en/index.html" target="_blank" id="btn_harleydavidson">Harley Davidson</a>
+				<a href="https://www.harley-davidson.com/us/en/index.html" target="_blank" id="btn_harleydavidson">HARLEY DAVIDSON<i class="fa-solid fa-motorcycle bike"></i>
+                </a>
 			</div>
 
 			<div class="button_container">
