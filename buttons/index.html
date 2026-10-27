@@ -15,12 +15,9 @@
         
         <script src="https://kit.fontawesome.com/5664cbb649.js" crossorigin="anonymous"></script>
 
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Black+Ops+One&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Rampart+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
-
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Black+Ops+One&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Great+Vibes&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Rampart+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
 
 
@@ -168,57 +165,58 @@ a#btn_ibm:hover {
 
 
 
-			a#btn_pastaria {
-				display: inline-block;
-				position: relative;
-				margin:auto;
-				margin-top: 100px;
-				padding: 8px 16px;
-				background-color: #fff;
-				color: #eb1478;
-				font-family: 'Ubuntu', sans-serif;
-				font-size: 30px;
-				font-weight: bold;
-				text-transform: uppercase;
-				text-decoration: none;
-				letter-spacing: -2px;
-				transition: all .2s;
-			}
+
+a#btn_cocacola {
+  display: inline-block;
+  height: 60px;
+  box-sizing: border-box;
+  margin-top: 100px;
+  padding: 0 20px;
+  line-height: 60px;               
+  background-color: #e61a27;       
+  border: 2px solid #e61a27;
+  border-radius: 30px;
+  color: #fff;
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  text-decoration: none;
+  transition: background-color .3s, color .3s;
+}
+
+a#btn_cocacola:hover {
+  background-color: #fff;
+  color: #e61a27;
+}
 
 
 
 
+a#btn_oldnavy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 110px;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 70px;
+  background-color: #002d62;      
+  border-radius: 50%;             
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: box-shadow .3s, transform .3s;
+}
 
-
-
-			a#btn_pastaria:before {
-				content: "";
-				display: block;
-				width: 0;
-				height: 0;
-				z-index: 1;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				background-color: #eb1478;
-				transition: all .5s;
-			}
-
-			a#btn_pastaria:hover {
-				color: #fff;
-			}
-
-			a#btn_pastaria:hover:before {
-				width: 100%;
-				height: 100%;
-				left: 0;
-				top: 0;
-			}
-
-			a#btn_pastaria span {
-				position: relative;
-				z-index: 10;
-			}
+a#btn_oldnavy:hover {
+  box-shadow: 0 8px 0 #e8d589;     
+  transform: translateY(-4px);     
+}
 
 
 		</style>
@@ -245,11 +243,11 @@ a#btn_ibm:hover {
 			</div>
 
 			<div class="button_container">
-				<a href="https://pastariadeliandwine.com/" target="_blank" id="btn_pastaria"><span>pastaria</span></a>
+				<a href="https://www.coca-cola.com/us/en" target="_blank" id="btn_cocacola"><span>Coca Cola</span></a>
 			</div>
 
             <div class="button_container">
-				<a href="https://www.hbomax.com/channel/cartoon-network" target="_blank" id="btn_cartoon network"><span>cartoon network</span></a>
+				<a href="https://oldnavy.gap.com/" target="_blank" id="btn_oldnavy"><span>Old Navy</span></a>
 			</div>
 
 		</main>	
