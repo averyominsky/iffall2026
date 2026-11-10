@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Evanescence</title>
+  <style>
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: white;
+  background: linear-gradient(#02060f, #07224a, #bdcdd1);
+}
+
+    header { text-align: center; padding: 20px; }
+    header img { max-width: 100%; width: 500px; }
+
+
+
+    nav { 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        gap: 40px; 
+        padding-bottom: 10px; 
+    }
+   
+    nav img { 
+        width: 80px; 
+    }
+    nav a { color: white; text-decoration: none; letter-spacing: 2px; }
+    nav a:hover { text-decoration: underline; }
+
+    .layout { 
+        max-width: 900px; 
+        margin: 0 auto; 
+        padding: 20px; 
+        
+    }
+
+    h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
+
+    .box {
+      background: #143f7a;
+      border: 3px solid #6f3f83;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+   
+
+    /* Grid: 2 columns with a gap between the boxes */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Boxes inside the grid use the grid gap instead of a bottom margin */
+    .grid .box { margin-bottom: 0; }
+
+    /* The first box (Amy Lee) stretches across both columns */
+    .grid .box:first-child { grid-column: span 2; }
+
+    /* On small screens, switch to 1 column */
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
+      .grid .box:first-child { grid-column: span 1; }
+    }
+
+   footer {
+  text-align: center;
+  padding: 30px;
+  color: white;
+  font-size: 14px;
+}
+
+footer a {
+  color: white;
+  font-size: 14px;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="evanescencelogo.png" alt="Evanescence">
+
+    <nav>
+      <a href="music.html">MUSIC</a>
+      <a href="index.html"><img src="symbol.png" alt="Home"></a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+
+    <main>
+
+    <div class="grid">
+
+    <div class="box">
+      <h2>Amy Lee</h2>
+      <h3>Vocals, piano, keyboards</h3>
+      <p>Co-founder, lead singer, and main songwriter.</p>
+    </div>
+
+    <div class="box">
+      <h2>Troy McLawhorn</h2>
+      <h3>Guitar</h3>
+      <p>Plays guitar on stage and in the studio.</p>
+    </div>
+
+    <div class="box">
+      <h2>Jen Majura</h2>
+      <h3>Guitar</h3>
+      <p>Guitarist who also sings backing vocals.</p>
+    </div>
+
+    <div class="box">
+      <h2>Will Hunt</h2>
+      <h3>Drums</h3>
+      <p>Drummer for the band's live shows.</p>
+    </div>
+
+    <div class="box">
+      <h2>Emma Anzai</h2>
+      <h3>Bass</h3>
+      <p>Joined the band for their album Sanctuary.</p>
+    </div>
+
+    </div>
+
+    </main>
+  </div>
+
+  
+
+<footer>
+  &copy; Avery Ominsky 2026 &nbsp;|&nbsp;
+  <a href="https://en.wikipedia.org/wiki/Evanescence">Wikipedia: Evanescence</a>
+</footer>
+
+
+</body>
+</html>
