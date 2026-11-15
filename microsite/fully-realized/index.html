@@ -45,12 +45,11 @@ nav a:hover {
 
 
 
-    .layout { 
-        max-width: 900px; 
-        margin: 0 auto; 
-        padding: 20px; 
-        
-    }
+  .layout {
+  max-width: 1200px;   /* was 900px */
+  margin: 0 auto;
+  padding: 20px;
+}
 
     h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
 
@@ -86,19 +85,21 @@ footer a {
 }
 
 .feature-row .box {
-  flex: 1;              /* smaller share of the row */
+  flex: 0 1 320px;   /* won't grow; ideal width 320px */
   margin-bottom: 0;
+  padding: 14px;
 }
+
+
 .feature-row video {
   flex: 1;
   min-width: 0;
   width: 100%;
-  max-width: 400px;
+  max-width: none;   /* was 600px */
   height: 100%;
-  object-fit: cover;   /* fills the box without stretching the picture */
+  object-fit: cover;
   border: 2px solid #143f7a;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
 }
 
@@ -126,20 +127,20 @@ footer a {
     </nav>
   </header>
 
-  <div class="layout">
-
-    <main>
+<div class="layout">
 
   <main>
 
-  <div class="feature-row">
-    <div class="box">
-    
-      <p>Evanescence is an American rock band founded in 1994 by singer and keyboardist Amy Lee and guitarist Ben Moody in Little Rock, Arkansas. Their debut album, <em>Fallen</em>, came out in 2003 and included "Bring Me to Life" and "My Immortal." It sold more than four million copies in the US and earned the band two Grammy Awards.</p>
+    <div class="feature-row">
+      <div class="box">
+        <p>Evanescence is an American rock band founded in 1994 by singer and keyboardist Amy Lee and guitarist Ben Moody in Little Rock, Arkansas. Their debut album, <em>Fallen</em>, came out in 2003 and included "Bring Me to Life" and "My Immortal." It sold more than four million copies in the US and earned the band two Grammy Awards.</p>
+      </div>
+      <video src="concertvideo.mp4" controls></video>
     </div>
-  <video src="concertvideo.mp4" controls></video>
 
-</main>
+  </main>
+
+</div>
 
 
   </div>
