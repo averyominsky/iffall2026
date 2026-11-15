@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Evanescence</title>
+  <style>
+
+
+body {
+  margin: 0;
+  min-height: 100vh;   /* add this line */
+  font-family: Georgia, serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: white;
+  background: linear-gradient(#02060f, #07224a, #bdcdd1);
+}
+
+    header { text-align: center; padding: 20px; }
+    header img { max-width: 100%; width: 500px; }
+
+
+
+    nav { 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        gap: 40px; 
+        padding-bottom: 10px; 
+    }
+   
+    nav img { 
+        width: 80px; 
+    }
+    nav a { 
+        color: white; 
+        text-decoration: none; 
+        letter-spacing: 2px; }
+        
+nav a:hover {
+  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+}
+
+
+
+
+    .layout { 
+        max-width: 900px; 
+        margin: 0 auto; 
+        padding: 20px; 
+        
+    }
+
+    h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
+
+    .box {
+      background: #143f7a;
+      padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+
+      margin-bottom: 20px;
+    }
+
+   
+
+   footer {
+  text-align: center;
+  padding: 30px;
+  color: white;
+  font-size: 14px;
+}
+
+footer a {
+  color: white;
+  font-size: 14px;
+}
+
+
+
+.feature-row {
+  display: flex;
+  align-items: stretch;   /* was flex-start */
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.feature-row .box {
+  flex: 1;              /* smaller share of the row */
+  margin-bottom: 0;
+}
+.feature-row video {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  object-fit: cover;   /* fills the box without stretching the picture */
+  border: 2px solid #143f7a;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .feature-row { flex-direction: column; }
+  .feature-row video { max-width: 100%; }
+}
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="evanescencelogo.png" alt="Evanescence">
+
+    <nav>
+      <a href="music.html">MUSIC</a>
+      <a href="index.html"><img src="symbol.png" alt="Home"></a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+
+    <main>
+
+  <main>
+
+  <div class="feature-row">
+    <div class="box">
+    
+      <p>Evanescence is an American rock band founded in 1994 by singer and keyboardist Amy Lee and guitarist Ben Moody in Little Rock, Arkansas. Their debut album, <em>Fallen</em>, came out in 2003 and included "Bring Me to Life" and "My Immortal." It sold more than four million copies in the US and earned the band two Grammy Awards.</p>
+    </div>
+  <video src="concertvideo.mp4" controls></video>
+
+</main>
+
+
+  </div>
+
+
+
+<footer>
+  &copy; Avery Ominsky 2026 &nbsp;|&nbsp;
+  <a href="https://en.wikipedia.org/wiki/Evanescence">Wikipedia: Evanescence</a>
+</footer>
+
+
+</body>
+</html>
