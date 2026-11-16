@@ -53,6 +53,73 @@ h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
   margin-bottom: 20px;
 }
 
+/* Albums + Popular Songs: centered titles, left-aligned lists */
+.music-columns {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;   /* centers the two columns in the box */
+  gap: 50px;
+}
+
+.music-columns h2 {
+  margin-top: 0;
+  text-align: left;        /* centered titles */
+}
+
+.music-columns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;          /* left-aligned lists */
+}
+
+.music-columns .note {
+  font-size: 14px;
+  opacity: 0.75;
+  font-style: italic;
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+/* Tours (no box behind it) */
+.tours-box {
+  margin-bottom: 20px;
+}
+
+.tours-box h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.tour-card {
+  text-align: center;
+}
+
+.tour-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.tour-card h3 {
+  margin: 12px 0 2px;
+  font-size: 18px;
+}
+
+.tour-card p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 15px;
+}
+
 /* iPod gallery */
 .ipod-gallery {
   display: flex;
@@ -60,22 +127,40 @@ h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
   align-items: center;
   gap: 30px;
   margin-bottom: 10px;
+  min-height: calc(100vh - 380px);   /* fills the first screen so the box starts below the fold */
 }
 
 .ipod-stage {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 1 auto;      /* shrink-wrap to the image instead of reserving 620px */
+  flex: 0 1 auto;
   min-width: 0;
 }
 
-.ipod-stage img {
-  width: 360px;        /* was 100% with max-width 560px; change this to resize */
+/* Only the iPod floats. The arrows stay still. */
+.ipod-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.ipod-float img {
+  display: block;
+  width: 360px;
   max-width: 100%;
   height: auto;
   cursor: pointer;
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.ipod-float img:hover {
+  transform: scale(1.04) rotate(-2deg);
+  filter: drop-shadow(0 12px 30px rgba(167, 220, 222, 0.5));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%      { transform: translateY(-14px) rotate(1.5deg); }
 }
 
 .ipod-btn {
@@ -121,7 +206,7 @@ h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 35px;
+  margin-bottom: 120px;   /* extra space pushing the box further down */
 }
 
 .ipod-dots span {
@@ -153,34 +238,11 @@ footer {
 }
 
 @media (max-width: 800px) {
-  .ipod-gallery { flex-direction: column; }
+  .ipod-gallery { flex-direction: column; min-height: 0; }
   .ipod-stage { flex: none; width: 100%; }
   .album-info { flex: none; width: 100%; box-sizing: border-box; }
+  .music-columns { grid-template-columns: 1fr; gap: 20px; }
 }
-
-
-.ipod-stage img {
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-14px); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(-1deg); }
-  50%      { transform: translateY(-14px) rotate(1.5deg); }
-}
-
-.ipod-stage img {
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-.ipod-stage img:hover {
-  transform: scale(1.04) rotate(-2deg);
-  filter: drop-shadow(0 12px 30px rgba(167, 220, 222, 0.5));
-}
-
 
   </style>
 </head>
@@ -203,7 +265,9 @@ footer {
       <div class="ipod-gallery">
         <div class="ipod-stage">
           <button class="ipod-btn prev" aria-label="Previous image">&#10094;</button>
-          <img id="ipod-img" src="ipod1.png" alt="iPod 1 of 4">
+          <div class="ipod-float">
+            <img id="ipod-img" src="ipod1.png" alt="iPod 1 of 6">
+          </div>
           <button class="ipod-btn next" aria-label="Next image">&#10095;</button>
         </div>
 
@@ -217,37 +281,58 @@ footer {
       <div class="ipod-dots" id="ipod-dots"></div>
 
       <div class="box">
-        <h2>Albums</h2>
-        <ul>
-          <li>Fallen (2003)</li>
-          <li>The Open Door (2006)</li>
-          <li>Evanescence (2011)</li>
-          <li>Synthesis (2017)</li>
-          <li>The Bitter Truth (2021)</li>
-          <li>Sanctuary (2026)</li>
-        </ul>
+        <div class="music-columns">
+          <div>
+            <h2>Albums</h2>
+            <ul>
+              <li>Fallen (2003)</li>
+              <li>The Open Door (2006)</li>
+              <li>Evanescence (2011)</li>
+              <li>Synthesis (2017)</li>
+              <li>The Bitter Truth (2021)</li>
+              <li>Sanctuary (2026)</li>
+            </ul>
+            <p class="note">These are the albums shown on the iPod above.</p>
+          </div>
+
+          <div>
+            <h2>Popular Songs</h2>
+            <ul>
+              <li>Bring Me to Life</li>
+              <li>My Immortal</li>
+              <li>Going Under</li>
+              <li>Lithium</li>
+              <li>Everybody's Fool</li>
+              <li>Call Me When You're Sober</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="box">
-        <h2>Popular Songs</h2>
-        <ul>
-          <li>Bring Me to Life</li>
-          <li>My Immortal</li>
-          <li>Going Under</li>
-          <li>Lithium</li>
-          <li>Everybody's Fool</li>
-          <li>Call Me When You're Sober</li>
-        </ul>
-      </div>
-
-      <div class="box">
+      <div class="tours-box">
         <h2>Tours</h2>
-        <ul>
-          <li>Sanctuary World Tour (2026)</li>
-          <li>Worlds Collide (2022)</li>
-          <li>Synthesis Live (2017-2018)</li>
-          <li>The Open Door Tour (2006-2007)</li>
-        </ul>
+        <div class="tour-grid">
+          <div class="tour-card">
+            <img src="tour4.png" alt="The Open Door Tour">
+            <h3>The Open Door Tour</h3>
+            <p>2006-2007</p>
+          </div>
+          <div class="tour-card">
+            <img src="tour3.png" alt="Synthesis Live">
+            <h3>Synthesis Live</h3>
+            <p>2017-2018</p>
+          </div>
+          <div class="tour-card">
+            <img src="tour2.png" alt="Worlds Collide">
+            <h3>Worlds Collide</h3>
+            <p>2022</p>
+          </div>
+          <div class="tour-card">
+            <img src="tour1.png" alt="Sanctuary World Tour">
+            <h3>Sanctuary World Tour</h3>
+            <p>2026</p>
+          </div>
+        </div>
       </div>
 
     </main>
@@ -271,7 +356,11 @@ footer {
     { image: "ipod3.png", title: "Evanescence", year: "2011",
       link: "https://music.apple.com/us/search?term=Evanescence+Evanescence+2011" },
     { image: "ipod4.png", title: "Synthesis", year: "2017",
-      link: "https://music.apple.com/us/search?term=Evanescence+Synthesis" }
+      link: "https://music.apple.com/us/search?term=Evanescence+Synthesis" },
+    { image: "ipod5.png", title: "The Bitter Truth", year: "2021",
+      link: "https://music.apple.com/us/search?term=Evanescence+The+Bitter+Truth" },
+    { image: "ipod6.png", title: "Sanctuary", year: "2026",
+      link: "https://music.apple.com/us/search?term=Evanescence+Sanctuary" }
   ];
 
   const img = document.getElementById("ipod-img");
