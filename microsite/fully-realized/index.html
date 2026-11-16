@@ -5,12 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home | Evanescence</title>
   <link rel="icon" type="image/png" href="tabsymbol.png">
-  <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"><style>
+
+
 
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Georgia, serif;
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
   font-size: 18px;
   line-height: 1.5;
   color: white;
@@ -19,6 +24,16 @@ body {
 
 header { text-align: center; padding: 20px; }
 header img { max-width: 100%; width: 500px; }
+
+
+h2 {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin: 0 0 10px;
+}
+
 
 nav {
   display: flex;
@@ -33,6 +48,8 @@ nav img {
 }
 
 nav a {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
   color: white;
   text-decoration: none;
   letter-spacing: 2px;
@@ -60,6 +77,9 @@ h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
 footer a {
   color: white;
   font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  transition: filter 0.3s ease, border-color 0.3s ease;
 }
 
 footer {
@@ -70,6 +90,10 @@ footer {
   line-height: 1.0;
   font-size: 14px;
   box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.35);
+}
+footer a:hover {
+  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+  border-color: #a7dcde;
 }
 
 .feature-row {
@@ -122,6 +146,7 @@ footer {
 
       <div class="feature-row">
         <div class="box">
+          <h2>EVANESCENCE</h2>
           <p>Evanescence is an American rock band founded in 1994 by singer and keyboardist Amy Lee and guitarist Ben Moody in Little Rock, Arkansas. Their debut album, <em>Fallen</em>, came out in 2003 and included "Bring Me to Life" and "My Immortal." It sold more than four million copies in the US and earned the band two Grammy Awards.</p>
         </div>
         <video id="concert" src="concertvideo.mp4" autoplay muted loop playsinline controls></video>
