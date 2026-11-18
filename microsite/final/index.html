@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Evanescence</title>
+  <link rel="icon" type="image/png" href="tabsymbol.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"><style>
+
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  line-height: 1.5;
+  color: white;
+  background: linear-gradient(#02060f, #07224a, #bdcdd1);
+}
+
+header { text-align: center; padding: 20px; }
+header img { max-width: 100%; width: 500px; }
+
+
+h2 {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin: 0 0 10px;
+}
+
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 10px;
+}
+
+nav img {
+  width: 80px;
+}
+
+nav a {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+nav a:hover {
+  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 200px;   /* top, sides, bottom */
+}
+
+h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
+
+.box {
+  background: #143f7a;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+footer a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  transition: filter 0.3s ease, border-color 0.3s ease;
+}
+
+footer {
+  background: #07224a;
+  text-align: center;
+  padding: 30px;
+  color: white;
+  line-height: 1.0;
+  font-size: 14px;
+  box-shadow: 0 50vh 0 50vh #07224a, 0px -3px 20px rgba(0, 0, 0, 0.5)
+}
+
+
+footer a:hover {
+  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+  border-color: #a7dcde;
+}
+
+.feature-row {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.feature-row .box {
+  flex: 0 1 320px;   /* won't grow; ideal width 320px */
+  margin-bottom: 0;
+  padding: 14px;
+}
+
+.feature-row video {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid #143f7a;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .feature-row { flex-direction: column; }
+  .feature-row video { max-width: 100%; }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="evanescencelogo.png" alt="Evanescence">
+
+    <nav>
+      <a href="music.html">MUSIC</a>
+      <a href="index.html"><img src="symbol.png" alt="Home"></a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+
+    <main>
+
+      <div class="feature-row">
+        <div class="box">
+          <h2>EVANESCENCE</h2>
+          <p>Evanescence is an American rock band founded in 1994 by singer and keyboardist Amy Lee and guitarist Ben Moody in Little Rock, Arkansas. Their debut album, <em>Fallen</em>, came out in 2003 and included "Bring Me to Life" and "My Immortal." It sold more than four million copies in the US and earned the band two Grammy Awards.</p>
+        </div>
+        <video id="concert" src="concertvideo.mp4" autoplay muted loop playsinline controls></video>
+      </div>
+
+    </main>
+
+  </div>
+
+  <footer>
+    <p>Designer: Avery Ominsky &nbsp;|&nbsp; Creative Director: Makayli Anochie</p>
+    <p>
+      &copy; 2026 &nbsp;|&nbsp;
+      <a href="https://en.wikipedia.org/wiki/Evanescence">Wikipedia: Evanescence</a>
+    </p>
+  </footer>
+
+  <script>
+    const v = document.getElementById("concert");
+    function unmute() {
+      v.muted = false;
+      v.volume = 1;
+      document.removeEventListener("click", unmute);
+      document.removeEventListener("keydown", unmute);
+    }
+    document.addEventListener("click", unmute);
+    document.addEventListener("keydown", unmute);
+  </script>
+
+</body>
+</html>

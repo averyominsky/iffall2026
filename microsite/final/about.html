@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Evanescence</title>
+  <link rel="icon" type="image/png" href="tabsymbol.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  line-height: 1.5;
+  color: white;
+  background: linear-gradient(#02060f, #07224a, #bdcdd1);
+}
+
+header { text-align: center; padding: 20px; }
+header img { max-width: 100%; width: 500px; }
+
+h2 {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin: 0 0 6px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+  opacity: 0.8;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 10px;
+}
+
+nav img {
+  width: 80px;
+}
+
+nav a {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: filter 0.3s ease;
+}
+
+nav a:hover {
+  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 200px;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-auto-rows: 1fr;
+  gap: 20px;
+}
+
+.box {
+  display: flex;
+  align-items: stretch;      
+  background: #143f7a;
+  padding: 0;                
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.box:first-child { grid-column: 1 / -1; }
+
+.box img {
+  flex: 0 0 140px;          
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+  object-position: center top;
+  margin: 0;
+  display: block;
+}
+
+.info {
+  padding: 20px;
+  min-width: 0;
+}
+
+.info p { margin: 0; }
+
+footer a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  transition: filter 0.3s ease, border-color 0.3s ease;
+}
+
+footer {
+  background: #07224a;
+  text-align: center;
+  padding: 30px;
+  color: white;
+  line-height: 1.0;
+  font-size: 14px;
+  box-shadow: 0 50vh 0 50vh #07224a, 0px -3px 20px rgba(0, 0, 0, 0.5)
+}
+
+footer a:hover {
+  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+  border-color: #a7dcde;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="evanescencelogo.png" alt="Evanescence">
+    <nav>
+      <a href="music.html">MUSIC</a>
+      <a href="index.html"><img src="symbol.png" alt="Home"></a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <main>
+      <div class="box">
+        <img src="amy.jpg" alt="Amy Lee">
+        <div class="info">
+          <h2>AMY LEE</h2>
+          <h3>Vocals, piano, keyboards</h3>
+          <p>Amy Lee co-founded Evanescence in 1994 in Little Rock, Arkansas, and has been its lead singer and main songwriter ever since. She sings and plays piano, keyboards, and harp, blending classical and cinematic influences with heavy rock. She is the only member who has been with the band since the beginning.</p>
+        </div>
+      </div>
+      <div class="box">
+        <img src="troy.jpg" alt="Troy McLawhorn">
+        <div class="info">
+          <h2>TROY MCLAWHORN</h2>
+          <h3>Guitar</h3>
+          <p>Plays guitar on stage and in the studio. Toured with the band from 2007 and rejoined officially in 2011 after a stint with Seether. He came from Dark New Day.</p>
+        </div>
+      </div>
+      <div class="box">
+        <img src="tim.jpg" alt="Jen Majura">
+        <div class="info">
+          <h2>Tim McCord</h2>
+          <h3>Guitar (formerly bass)</h3>
+          <p>Guitarist since 2022, and bass from 2006 to 2022. Before Evanescence he was in The Revolution Smile.</p>
+        </div>
+      </div>
+      <div class="box">
+        <img src="will.jpg" alt="Will Hunt">
+        <div class="info">
+          <h2>WILL HUNT</h2>
+          <h3>Drums</h3>
+          <p>Drummer for the band's live shows since 2007. Also from Dark New Day, and he has a co-writing credit on “Yeah Right” from The Bitter Truth.</p>
+        </div>
+      </div>
+      <div class="box">
+        <img src="emma.jpg" alt="Emma Anzai">
+        <div class="info">
+          <h2>EMMA ANZAI</h2>
+          <h3>Bass, backing vocals</h3>
+          <p>Joined the band for their album <em>Sanctuary</em>. She previously played in Sick Puppies.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>Designer: Avery Ominsky &nbsp;|&nbsp; Creative Director: Makayli Anochie</p>
+    <p>
+      &copy; 2026 &nbsp;|&nbsp;
+      <a href="https://en.wikipedia.org/wiki/Evanescence">Wikipedia: Evanescence</a>
+    </p>
+  </footer>
+
+</body>
+</html>
