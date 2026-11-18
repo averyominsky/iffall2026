@@ -73,11 +73,11 @@ h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Albums + Popular Songs: two columns, left-aligned */
+
 .music-columns {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  justify-content: center;   /* centers the two columns in the box */
+  justify-content: center;   
   gap: 50px;
 }
 
@@ -113,7 +113,6 @@ h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
   filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
 }
 
-/* Tours (no box behind it) */
 .tours-box {
     margin-top: 60px;
     margin-bottom: 20px;
@@ -173,7 +172,7 @@ h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
   align-items: center;
   gap: 30px;
   margin-bottom: 10px;
-  min-height: calc(100vh - 380px);   /* fills the first screen so the box starts below the fold */
+  min-height: calc(100vh - 380px);   
 }
 
 .ipod-stage {
@@ -184,7 +183,7 @@ h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
   min-width: 0;
 }
 
-/* Only the iPod floats. The arrows stay still. */
+
 .ipod-float {
   animation: float 4s ease-in-out infinite;
 }
@@ -196,12 +195,11 @@ h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
   height: auto;
   cursor: pointer;
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 .ipod-float img:hover {
   transform: scale(1.04) rotate(-2deg);
-  filter: drop-shadow(0 12px 30px rgba(167, 220, 222, 0.5));
 }
 
 @keyframes float {
@@ -232,28 +230,27 @@ h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
+.album-info a:hover {
+  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+}
 .album-info h2 { margin: 0 0 4px; font-size: 24px; }
 .album-info .year { margin: 0 0 16px; opacity: 0.8; }
 
 .album-info a {
-  display: inline-block;
   color: white;
-  text-decoration: none;
-  letter-spacing: 1px;
-  border: 2px solid #a7dcde;
-  padding: 8px 14px;
-  transition: filter 0.3s ease;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .album-info a:hover {
-  filter: brightness(1.5) drop-shadow(0 0 8px #a7dcde);
+  text-decoration-thickness: 2px;
 }
 
 .ipod-dots {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 120px;   /* extra space pushing the box further down */
+  margin-bottom: 120px;   
 }
 
 .ipod-dots span {
@@ -329,7 +326,7 @@ footer a:hover {
         <div class="album-info">
           <h2 id="album-title"></h2>
           <p class="year" id="album-year"></p>
-          <a id="album-link" href="#" target="_blank" rel="noopener">Listen on Apple Music</a>
+          <a id="album-link" href="#" target="_blank" rel="noopener">Apple Music</a>
         </div>
       </div>
 
@@ -402,8 +399,8 @@ footer a:hover {
   </footer>
 
 <script>
-  // One entry per iPod image. Edit the album, year, and link for each.
-  const albums = [
+
+const albums = [
     { image: "ipod1.png", title: "Fallen", year: "2003",
       link: "https://music.apple.com/us/search?term=Evanescence+Fallen" },
     { image: "ipod2.png", title: "The Open Door", year: "2006",
