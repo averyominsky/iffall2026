@@ -11,6 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -25,7 +29,6 @@
 
     header {
       text-align: center;
-
       padding: 45px 20px 20px;
     }
 
@@ -34,26 +37,23 @@
       width: 500px;
     }
 
+    .layout h1 {
+      font-family: "Cinzel Decorative", serif;
+      font-size: clamp(32px, 7vw, 50px);
+      letter-spacing: clamp(2px, 0.8vw, 4px);
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-       .layout h1 {
-  font-family: "Cinzel Decorative", serif;
-  font-size: 50px;
-  letter-spacing: 4px;
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.description {
-  text-align: center;
-  font-size: 17px;
-  font-weight: 300;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
-
-
+    .description {
+      text-align: center;
+      font-size: 17px;
+      font-weight: 300;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
 
     h2 {
       font-family: "Cinzel Decorative", serif;
@@ -61,6 +61,7 @@
       font-size: 25px;
       letter-spacing: 3px;
       margin: 0 0 6px;
+      overflow-wrap: break-word;
     }
 
     h3 {
@@ -102,17 +103,15 @@
       max-width: none;
       margin: 0 auto;
       padding: 20px 4% 200px;
-      box-sizing: border-box;
     }
 
- main {
-  max-width: 1250px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 1fr;
-  gap: 40px;
-}
+    main {
+      max-width: 1250px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
 
     .box {
       display: flex;
@@ -122,6 +121,7 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
       overflow: hidden;
       border-radius: 0 20px 0 20px;
+      min-width: 0;
     }
 
     .box:first-child {
@@ -130,7 +130,8 @@
 
     .box img {
       flex: 0 0 200px;
-      width: 100px;
+      width: 200px;
+      min-height: 220px;
       height: auto;
       object-fit: cover;
       object-position: center top;
@@ -141,6 +142,7 @@
     .info {
       padding: 40px;
       min-width: 0;
+      flex: 1;
     }
 
     .info p {
@@ -170,9 +172,71 @@
       border-color: #a7dcde;
     }
 
+    /* Tablet: one card per row, image stays beside the text */
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
 
+      .info {
+        padding: 30px;
+      }
+    }
 
+    /* Phone: stack image above text so neither gets squeezed */
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
 
+      header {
+        padding: 30px 16px 10px;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      nav img {
+        width: 60px;
+      }
+
+      .layout {
+        padding: 10px 5% 120px;
+      }
+
+      .box,
+      .box:first-child {
+        flex-direction: column;
+      }
+
+      .box img {
+        flex: none;
+        width: 100%;
+        height: 280px;
+        min-height: 0;
+        object-position: center 20%;
+      }
+
+      .info {
+        padding: 24px;
+      }
+
+      h2 {
+        font-size: 21px;
+        letter-spacing: 2px;
+      }
+
+      h3 {
+        margin-bottom: 14px;
+      }
+
+      footer {
+        padding: 24px 16px;
+        line-height: 1.4;
+      }
+    }
   </style>
 </head>
 
@@ -187,19 +251,17 @@
       <a href="about.html">BAND</a>
     </nav>
   </header>
-  
 
-<div class="layout">
+  <div class="layout">
 
-  <div class="page-heading">
-    <h1>THE BAND</h1>
-    <p class="description">
-      Meet the members of Evanescence and learn more about their roles in the band.
-    </p>
-  </div>
-  
-  
-  <main>
+    <div class="page-heading">
+      <h1>THE BAND</h1>
+      <p class="description">
+        Meet the members of Evanescence and learn more about their roles in the band.
+      </p>
+    </div>
+
+    <main>
 
       <div class="box">
         <img src="amy.jpg" alt="Amy Lee">
@@ -220,7 +282,7 @@
       </div>
 
       <div class="box">
-        <img src="tim.jpg" alt="Jen Majura">
+        <img src="tim.jpg" alt="Tim McCord">
         <div class="info">
           <h2>Tim McCord</h2>
           <h3>Guitar (formerly bass)</h3>
