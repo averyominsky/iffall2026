@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+<script src="https://kit.fontawesome.com/5664cbb649.js" crossorigin="anonymous"></script>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -22,6 +25,7 @@
       line-height: 1.5;
       color: white;
       background: linear-gradient(#02060f, #07224a, #bdcdd1);
+      overflow-x: hidden;
     }
 
     header {
@@ -59,18 +63,17 @@
       filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
     }
 
-    .layout {
-      width: 100%;
-      max-width: none;
-      margin: 0 auto;
-      padding: 20px 4% 200px;
-      box-sizing: border-box;
-    }
+  .layout {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 10px 5% 100px;
+}
 
     .page-heading h1 {
       font-family: "Cinzel Decorative", serif;
-      font-size: 50px;
-      letter-spacing: 4px;
+      font-size: clamp(32px, 7vw, 50px);
+      letter-spacing: clamp(2px, 0.8vw, 4px);
       text-align: center;
       font-weight: 600;
       margin-bottom: 10px;
@@ -91,6 +94,7 @@
       font-size: 25px;
       letter-spacing: 3px;
       margin: 0 0 6px;
+      overflow-wrap: break-word;
     }
 
     .box {
@@ -155,7 +159,7 @@
 
     .tour-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
       gap: 20px;
     }
 
@@ -169,15 +173,6 @@
       object-fit: cover;
       display: block;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      position: relative;
-      z-index: 1;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .tour-card img:hover {
-      transform: scale(1.05);
-      z-index: 10;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
     }
 
     .tour-card h3 {
@@ -207,16 +202,19 @@
       justify-content: center;
       flex: 0 1 auto;
       min-width: 0;
+      max-width: 100%;
     }
 
     .ipod-float {
       animation: float 4s ease-in-out infinite;
+      flex: 0 1 360px;
+      min-width: 0;
     }
 
     .ipod-float img {
       display: block;
-      width: 360px;
-      max-width: 100%;
+      width: 100%;
+      max-width: 360px;
       height: auto;
       cursor: pointer;
       filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
@@ -232,29 +230,30 @@
       50% { transform: translateY(-14px) rotate(1.5deg); }
     }
 
-  .ipod-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    padding: 5px;
-    opacity: 1;
-    transition: opacity 0.3s;
-}
+    .ipod-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+      padding: 5px;
+      flex: none;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
 
     .ipod-btn:hover {
       opacity: 0.6;
     }
 
-  .album-info {
-    flex: 0 0 300px;
-    background: #143f7a;
-    padding: 20px;
-    margin-left: 30px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    border-radius: 0 20px 0 20px;
-}
+    .album-info {
+      flex: 0 0 300px;
+      background: #143f7a;
+      padding: 20px;
+      margin-left: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      border-radius: 0 20px 0 20px;
+    }
 
     .album-info h2 {
       margin: 0 0 4px;
@@ -320,9 +319,11 @@
       border-color: #a7dcde;
     }
 
-    @media (max-width: 800px) {
+    /* Tablet: iPod on top, album info underneath */
+    @media (max-width: 900px) {
       .ipod-gallery {
         flex-direction: column;
+        gap: 24px;
         min-height: 0;
       }
 
@@ -334,14 +335,108 @@
       .album-info {
         flex: none;
         width: 100%;
-        box-sizing: border-box;
+        max-width: 500px;
+        margin-left: 0;
+        text-align: center;
       }
 
       .music-columns {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 24px;
+      }
+
+      /* dots sit below the album info box now, so no negative pull-up */
+      .ipod-dots {
+        margin-top: 24px;
+        margin-bottom: 60px;
       }
     }
+
+    /* Phone */
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+
+      header {
+        padding: 30px 16px 10px;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      nav img {
+        width: 60px;
+      }
+
+      .layout {
+        padding: 10px 5% 120px;
+      }
+
+      h2,
+      .tours-box h2 {
+        font-size: 21px;
+        letter-spacing: 2px;
+      }
+
+      .album-info h2 {
+        font-size: 21px;
+      }
+
+      .ipod-btn {
+        font-size: 18px;
+        padding: 2px;
+      }
+
+      .ipod-dots {
+        margin-top: 20px;
+        margin-bottom: 50px;
+      }
+
+      .tours-box {
+        margin-top: 40px;
+      }
+
+      .tour-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .tour-card h3 {
+        font-size: 16px;
+      }
+
+      .tour-card p {
+        font-size: 14px;
+      }
+
+      footer {
+        padding: 24px 16px;
+        line-height: 1.4;
+      }
+    }
+
+
+    .social {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  gap: 15px;
+  font-size: 30px;
+}
+
+.social a {
+  color: white;
+  transition: filter 0.3s ease;
+}
+
+.social a:hover {
+  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+}
+
+
+
   </style>
 </head>
 
@@ -444,6 +539,19 @@
           </div>
         </div>
       </div>
+
+      <div class="social">
+  <a href="https://music.apple.com/us/artist/evanescence/42102393">
+    <i class="fa-solid fa-music"></i>
+  </a>
+  <a href="https://www.instagram.com/evanescenceofficial/?hl=en">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+  <a href="https://www.facebook.com/Evanescence" target="_blank">
+    <i class="fa-brands fa-facebook"></i>
+  </a>
+</div>
+
 
     </main>
   </div>

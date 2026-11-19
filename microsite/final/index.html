@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/5664cbb649.js" crossorigin="anonymous"></script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -22,6 +26,7 @@
       line-height: 1.5;
       color: white;
       background: linear-gradient(#02060f, #07224a, #bdcdd1);
+      overflow-x: hidden;
     }
 
     header {
@@ -31,7 +36,7 @@
 
     header img {
       max-width: 100%;
-      width: 500px;
+      width: 550px;
     }
 
     nav {
@@ -63,14 +68,18 @@
       width: 100%;
       max-width: none;
       margin: 0 auto;
-      padding: 20px 4% 200px;
-      box-sizing: border-box;
+      padding: 10px 5% 100px;
+    }
+
+    main {
+      max-width: 1250px;
+      margin: 0 auto;
     }
 
     .page-heading h1 {
       font-family: "Cinzel Decorative", serif;
-      font-size: 50px;
-      letter-spacing: 4px;
+      font-size: clamp(32px, 7vw, 50px);
+      letter-spacing: clamp(2px, 0.8vw, 4px);
       text-align: center;
       font-weight: 600;
       margin-bottom: 10px;
@@ -91,6 +100,7 @@
       font-size: 25px;
       letter-spacing: 3px;
       margin: 0 0 6px;
+      overflow-wrap: break-word;
     }
 
     .box {
@@ -103,28 +113,44 @@
 
     .feature-row {
       display: flex;
+      justify-content: center;
       align-items: stretch;
       gap: 20px;
       margin-bottom: 20px;
     }
 
     .feature-row .box {
-      flex: 0 1 320px;
+      flex: 0 1 380px;
       margin-bottom: 0;
       padding: 20px;
     }
 
     .feature-row video {
-      flex: 1;
+      flex: 1 1 0;
       min-width: 0;
       width: 100%;
-      max-width: none;
       height: auto;
+      cursor: pointer;
       object-fit: cover;
       border: 2px solid #143f7a;
       border-radius: 0 20px 0 20px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      box-sizing: border-box;
+    }
+
+    /* three images under the video row */
+    .photo-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .photo-row img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      border-radius: 0 20px 0 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
 
     footer a {
@@ -150,20 +176,78 @@
       border-color: #a7dcde;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
       .feature-row {
         flex-direction: column;
       }
 
       .feature-row .box {
-        flex: auto;
+        flex: none;
+        width: 100%;
       }
 
       .feature-row video {
-        max-width: 100%;
-        min-height: 250px;
+        flex: none;
+        height: auto;
       }
     }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+
+      header {
+        padding: 30px 16px 10px;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      nav img {
+        width: 60px;
+      }
+
+      .layout {
+        padding: 10px 5% 120px;
+      }
+
+      h2 {
+        font-size: 21px;
+        letter-spacing: 2px;
+      }
+
+      .photo-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      footer {
+        padding: 24px 16px;
+        line-height: 1.4;
+      }
+    }
+
+
+.social {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  gap: 15px;
+  font-size: 30px;
+}
+
+.social a {
+  color: white;
+  transition: filter 0.3s ease;
+}
+
+.social a:hover {
+  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+}
+
+
 
   </style>
 </head>
@@ -178,7 +262,7 @@
       <a href="about.html">BAND</a>
     </nav>
 
-        <img src="evanescencelogo.png" alt="Evanescence">
+    <img src="evanescencelogo.png" alt="Evanescence">
 
   </header>
 
@@ -201,11 +285,33 @@
         </div>
 
         <video id="concert" src="concertvideo.mp4"
-          autoplay muted loop playsinline controls></video>
+          autoplay muted loop playsinline></video>
 
       </div>
 
+      <div class="photo-row">
+        <img src="home1.jpg" alt="Evanescence photo 1">
+        <img src="home2.jpg" alt="Evanescence photo 2">
+        <img src="home3.jpg" alt="Evanescence photo 3">
+      </div>
+
+
+<div class="social">
+  <a href="https://music.apple.com/us/artist/evanescence/42102393">
+    <i class="fa-solid fa-music"></i>
+  </a>
+  <a href="https://www.instagram.com/evanescenceofficial/?hl=en">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+  <a href="https://www.facebook.com/Evanescence" target="_blank">
+    <i class="fa-brands fa-facebook"></i>
+  </a>
+</div>
+
+
     </main>
+
+    
 
   </div>
 
@@ -220,15 +326,12 @@
   <script>
     const v = document.getElementById("concert");
 
-    function unmute() {
-      v.muted = false;
+    // autoplays muted; clicking the video itself toggles sound
+    v.addEventListener("click", () => {
+      v.muted = !v.muted;
       v.volume = 1;
-      document.removeEventListener("click", unmute);
-      document.removeEventListener("keydown", unmute);
-    }
-
-    document.addEventListener("click", unmute);
-    document.addEventListener("keydown", unmute);
+      if (v.paused) v.play();
+    });
   </script>
 
 </body>
