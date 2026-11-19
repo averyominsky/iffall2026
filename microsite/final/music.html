@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,303 +6,348 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Music | Evanescence</title>
   <link rel="icon" type="image/png" href="tabsymbol.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Urbanist", sans-serif;
+      font-optical-sizing: auto;
+      font-size: 18px;
+      font-weight: 100;
+      line-height: 1.5;
+      color: white;
+      background: linear-gradient(#02060f, #07224a, #bdcdd1);
+    }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: "Urbanist", sans-serif;
-  font-optical-sizing: auto;
-  font-size: 18px;
-  line-height: 1.5;
-  color: white;
-  background: linear-gradient(#02060f, #07224a, #bdcdd1);
-}
+    header {
+      text-align: center;
+      padding: 45px 20px 20px;
+    }
 
-header { text-align: center; padding: 20px; }
-header img { max-width: 100%; width: 500px; }
+    header img {
+      max-width: 100%;
+      width: 500px;
+    }
 
-h2 {
-  font-family: "Cinzel Decorative", serif;
-  font-weight: 400;
-  font-size: 22px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin: 0 0 10px;
-}
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding-bottom: 10px;
+    }
 
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  padding-bottom: 10px;
-}
+    nav img {
+      width: 80px;
+    }
 
-nav img {
-  width: 80px;
-}
+    nav a {
+      font-family: "Cinzel Decorative", serif;
+      font-weight: 400;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: filter 0.3s ease;
+    }
 
-nav a {
-  font-family: "Cinzel Decorative", serif;
-  font-weight: 400;
-  color: white;
-  text-decoration: none;
-  letter-spacing: 2px;
-  transition: filter 0.3s ease;
-}
+    nav a:hover {
+      filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+    }
 
-nav a:hover {
-  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
-}
+    .layout {
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+      padding: 20px 4% 200px;
+      box-sizing: border-box;
+    }
 
-.layout {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 20px 200px;   /* top, sides, bottom */
-}
+    .page-heading h1 {
+      font-family: "Cinzel Decorative", serif;
+      font-size: 50px;
+      letter-spacing: 4px;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-h1 { font-size: 40px; letter-spacing: 4px; margin-top: 0; }
+    .description {
+      text-align: center;
+      font-size: 17px;
+      font-weight: 300;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
 
-.box {
-  background: #143f7a;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
+    h2 {
+      font-family: "Cinzel Decorative", serif;
+      font-weight: 700;
+      font-size: 25px;
+      letter-spacing: 3px;
+      margin: 0 0 6px;
+    }
 
+    .box {
+      background: #143f7a;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      border-radius: 0 20px 0 20px;
+    }
 
-.music-columns {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  justify-content: center;   
-  gap: 50px;
-}
+    .music-columns {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      justify-content: center;
+      gap: 50px;
+    }
 
-.music-columns h2 {
-  margin-top: 0;
-  text-align: left;
-}
+    .music-columns h2 {
+      margin-top: 0;
+      text-align: left;
+    }
 
-.music-columns ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-}
+    .music-columns ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
 
-.music-columns .note {
-  font-size: 14px;
-  opacity: 0.75;
-  font-style: italic;
-  margin: 10px 0 0;
-  text-align: left;
-}
+    .music-columns .note {
+      font-size: 14px;
+      opacity: 0.75;
+      font-style: italic;
+      margin: 10px 0 0;
+      text-align: left;
+    }
 
-.music-columns li a {
-  color: white;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  display: inline-block;
-  transition: filter 0.3s ease;
-}
+    .music-columns li a {
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      display: inline-block;
+      transition: filter 0.3s ease;
+    }
 
-.music-columns li a:hover {
-  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
-}
+    .music-columns li a:hover {
+      filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+    }
 
-.tours-box {
-    margin-top: 60px;
-    margin-bottom: 20px;
+    .tours-box {
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
 
-}
+    .tours-box h2 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 25px;
+      font-weight: 700;
+    }
 
-.tours-box h2 {
-  text-align: center;
-  margin-top: 0;
-    margin-bottom: 20px;
+    .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
 
-}
+    .tour-card {
+      text-align: center;
+    }
 
-.tour-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
+    .tour-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 1;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
 
-.tour-card {
-  text-align: center;
-}
+    .tour-card img:hover {
+      transform: scale(1.05);
+      z-index: 10;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+    }
 
-.tour-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  position: relative;
-  z-index: 1;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+    .tour-card h3 {
+      margin: 12px 0 2px;
+      font-size: 18px;
+      font-weight: 600;
+    }
 
-.tour-card img:hover {
-  transform: scale(1.05);
-  z-index: 10;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
-}
+    .tour-card p {
+      margin: 0;
+      opacity: 0.8;
+      font-size: 15px;
+    }
 
-.tour-card h3 {
-  margin: 12px 0 2px;
-  font-size: 18px;
-  font-weight: 600;
-}
+    /* iPod gallery */
+    .ipod-gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 10px;
+      min-height: calc(100vh - 380px);
+    }
 
-.tour-card p {
-  margin: 0;
-  opacity: 0.8;
-  font-size: 15px;
-}
+    .ipod-stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 1 auto;
+      min-width: 0;
+    }
 
-/* iPod gallery */
-.ipod-gallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 10px;
-  min-height: calc(100vh - 380px);   
-}
+    .ipod-float {
+      animation: float 4s ease-in-out infinite;
+    }
 
-.ipod-stage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 1 auto;
-  min-width: 0;
-}
+    .ipod-float img {
+      display: block;
+      width: 360px;
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
+      transition: transform 0.4s ease;
+    }
 
+    .ipod-float img:hover {
+      transform: scale(1.04) rotate(-2deg);
+    }
 
-.ipod-float {
-  animation: float 4s ease-in-out infinite;
-}
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50% { transform: translateY(-14px) rotate(1.5deg); }
+    }
 
-.ipod-float img {
-  display: block;
-  width: 360px;
-  max-width: 100%;
-  height: auto;
-  cursor: pointer;
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
-  transition: transform 0.4s ease;
-}
+    .ipod-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 5px;
+      opacity: 0.12;
+      transition: opacity 0.3s;
+    }
 
-.ipod-float img:hover {
-  transform: scale(1.04) rotate(-2deg);
-}
+    .ipod-btn:hover {
+      opacity: 0.6;
+    }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(-1deg); }
-  50%      { transform: translateY(-14px) rotate(1.5deg); }
-}
+    .album-info {
+      flex: 0 1 300px;
+      background: #143f7a;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      border-radius: 0 20px 0 20px;
+    }
 
-.ipod-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  padding: 5px;
-  opacity: 0.12;
-  transition: opacity 0.3s;
-}
+    .album-info h2 {
+      margin: 0 0 4px;
+      font-size: 24px;
+    }
 
-.ipod-btn:hover {
-  opacity: 0.6;
-}
+    .album-info .year {
+      margin: 0 0 16px;
+      opacity: 0.8;
+    }
 
-/* Album info panel beside the iPod */
-.album-info {
-  flex: 0 1 300px;
-  background: #143f7a;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
+    .album-info a {
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
 
-.album-info a:hover {
-  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
-}
-.album-info h2 { margin: 0 0 4px; font-size: 24px; }
-.album-info .year { margin: 0 0 16px; opacity: 0.8; }
+    .album-info a:hover {
+      filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+      text-decoration-thickness: 2px;
+    }
 
-.album-info a {
-  color: white;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
+    .ipod-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 120px;
+    }
 
-.album-info a:hover {
-  text-decoration-thickness: 2px;
-}
+    .ipod-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+    }
 
-.ipod-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 120px;   
-}
+    .ipod-dots span.active {
+      background: #a7dcde;
+    }
 
-.ipod-dots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-}
+    footer a {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      transition: filter 0.3s ease, border-color 0.3s ease;
+    }
 
-.ipod-dots span.active {
-  background: #a7dcde;
-}
+    footer {
+      background: #07224a;
+      text-align: center;
+      padding: 30px;
+      color: white;
+      line-height: 1.0;
+      font-size: 14px;
+      box-shadow: 0 50vh 0 50vh #07224a, 0px -3px 20px rgba(0, 0, 0, 0.5);
+    }
 
-/* Footer (same as home and about) */
-footer a {
-  color: white;
-  font-size: 14px;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  transition: filter 0.3s ease, border-color 0.3s ease;
-}
+    footer a:hover {
+      filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
+      border-color: #a7dcde;
+    }
 
-footer {
-  background: #07224a;
-  text-align: center;
-  padding: 30px;
-  color: white;
-  line-height: 1.0;
-  font-size: 14px;
-  box-shadow: 0 50vh 0 50vh #07224a, 0px -3px 20px rgba(0, 0, 0, 0.5)
-}
+    @media (max-width: 800px) {
+      .ipod-gallery {
+        flex-direction: column;
+        min-height: 0;
+      }
 
-footer a:hover {
-  filter: brightness(2) drop-shadow(0 0 8px #a7dcde) drop-shadow(0 0 20px #a7dcde);
-  border-color: #a7dcde;
-}
+      .ipod-stage {
+        flex: none;
+        width: 100%;
+      }
 
-@media (max-width: 800px) {
-  .ipod-gallery { flex-direction: column; min-height: 0; }
-  .ipod-stage { flex: none; width: 100%; }
-  .album-info { flex: none; width: 100%; box-sizing: border-box; }
-  .music-columns { grid-template-columns: 1fr; gap: 20px; }
-}
+      .album-info {
+        flex: none;
+        width: 100%;
+        box-sizing: border-box;
+      }
 
+      .music-columns {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <header>
-    <img src="evanescencelogo.png" alt="Evanescence">
+    <!-- <img src="evanescencelogo.png" alt="Evanescence"> -->
 
     <nav>
       <a href="music.html">MUSIC</a>
@@ -311,6 +357,13 @@ footer a:hover {
   </header>
 
   <div class="layout">
+
+    <div class="page-heading">
+      <h1>THE MUSIC</h1>
+      <p class="description">
+        Explore Evanescence's albums, iconic songs, and live performances.
+      </p>
+    </div>
 
     <main>
 
@@ -363,22 +416,26 @@ footer a:hover {
 
       <div class="tours-box">
         <h2>Tours</h2>
+
         <div class="tour-grid">
           <div class="tour-card">
             <img src="2006.jpg" alt="The Open Door Tour">
             <h3>The Open Door Tour</h3>
             <p>2006-2007</p>
           </div>
+
           <div class="tour-card">
             <img src="2017.jpg" alt="Synthesis Live">
             <h3>Synthesis Live</h3>
             <p>2017-2018</p>
           </div>
+
           <div class="tour-card">
             <img src="2022.jpg" alt="Worlds Collide">
             <h3>Worlds Collide</h3>
             <p>2022</p>
           </div>
+
           <div class="tour-card">
             <img src="2026.jpg" alt="Sanctuary World Tour">
             <h3>Sanctuary World Tour</h3>
@@ -398,55 +455,82 @@ footer a:hover {
     </p>
   </footer>
 
-<script>
+  <script>
+    const albums = [
+      {
+        image: "ipod1.png",
+        title: "Fallen",
+        year: "2003",
+        link: "https://music.apple.com/us/search?term=Evanescence+Fallen"
+      },
+      {
+        image: "ipod2.png",
+        title: "The Open Door",
+        year: "2006",
+        link: "https://music.apple.com/us/search?term=Evanescence+The+Open+Door"
+      },
+      {
+        image: "ipod3.png",
+        title: "Evanescence",
+        year: "2011",
+        link: "https://music.apple.com/us/search?term=Evanescence+Evanescence+2011"
+      },
+      {
+        image: "ipod4.png",
+        title: "Synthesis",
+        year: "2017",
+        link: "https://music.apple.com/us/search?term=Evanescence+Synthesis"
+      },
+      {
+        image: "ipod5.png",
+        title: "The Bitter Truth",
+        year: "2021",
+        link: "https://music.apple.com/us/search?term=Evanescence+The+Bitter+Truth"
+      },
+      {
+        image: "ipod6.png",
+        title: "Sanctuary",
+        year: "2026",
+        link: "https://music.apple.com/us/search?term=Evanescence+Sanctuary"
+      }
+    ];
 
-const albums = [
-    { image: "ipod1.png", title: "Fallen", year: "2003",
-      link: "https://music.apple.com/us/search?term=Evanescence+Fallen" },
-    { image: "ipod2.png", title: "The Open Door", year: "2006",
-      link: "https://music.apple.com/us/search?term=Evanescence+The+Open+Door" },
-    { image: "ipod3.png", title: "Evanescence", year: "2011",
-      link: "https://music.apple.com/us/search?term=Evanescence+Evanescence+2011" },
-    { image: "ipod4.png", title: "Synthesis", year: "2017",
-      link: "https://music.apple.com/us/search?term=Evanescence+Synthesis" },
-    { image: "ipod5.png", title: "The Bitter Truth", year: "2021",
-      link: "https://music.apple.com/us/search?term=Evanescence+The+Bitter+Truth" },
-    { image: "ipod6.png", title: "Sanctuary", year: "2026",
-      link: "https://music.apple.com/us/search?term=Evanescence+Sanctuary" }
-  ];
+    const img = document.getElementById("ipod-img");
+    const dotsBox = document.getElementById("ipod-dots");
+    const titleEl = document.getElementById("album-title");
+    const yearEl = document.getElementById("album-year");
+    const linkEl = document.getElementById("album-link");
 
-  const img = document.getElementById("ipod-img");
-  const dotsBox = document.getElementById("ipod-dots");
-  const titleEl = document.getElementById("album-title");
-  const yearEl = document.getElementById("album-year");
-  const linkEl = document.getElementById("album-link");
-  let index = 0;
+    let index = 0;
 
-  albums.forEach((_, i) => {
-    const dot = document.createElement("span");
-    dot.addEventListener("click", () => show(i));
-    dotsBox.appendChild(dot);
-  });
+    albums.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.addEventListener("click", () => show(i));
+      dotsBox.appendChild(dot);
+    });
 
-  function show(i) {
-    index = (i + albums.length) % albums.length;
-    const a = albums[index];
-    img.src = a.image;
-    img.alt = "iPod showing " + a.title;
-    titleEl.textContent = a.title;
-    yearEl.textContent = a.year;
-    linkEl.href = a.link;
-    [...dotsBox.children].forEach((d, n) =>
-      d.classList.toggle("active", n === index)
-    );
-  }
+    function show(i) {
+      index = (i + albums.length) % albums.length;
 
-  document.querySelector(".prev").addEventListener("click", () => show(index - 1));
-  document.querySelector(".next").addEventListener("click", () => show(index + 1));
-  img.addEventListener("click", () => show(index + 1));
+      const a = albums[index];
 
-  show(0);
-</script>
+      img.src = a.image;
+      img.alt = "iPod showing " + a.title;
+      titleEl.textContent = a.title;
+      yearEl.textContent = a.year;
+      linkEl.href = a.link;
+
+      [...dotsBox.children].forEach((d, n) =>
+        d.classList.toggle("active", n === index)
+      );
+    }
+
+    document.querySelector(".prev").addEventListener("click", () => show(index - 1));
+    document.querySelector(".next").addEventListener("click", () => show(index + 1));
+    img.addEventListener("click", () => show(index + 1));
+
+    show(0);
+  </script>
 
 </body>
 </html>
