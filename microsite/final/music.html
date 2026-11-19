@@ -81,7 +81,7 @@
       font-size: 17px;
       font-weight: 300;
       max-width: 700px;
-      margin: 0 auto 40px;
+      margin: 0 auto 2px;
       line-height: 1.6;
     }
 
@@ -197,9 +197,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 30px;
-      margin-bottom: 10px;
-      min-height: calc(100vh - 380px);
+      gap: 40px;
+      margin-bottom: 1px;
     }
 
     .ipod-stage {
@@ -233,28 +232,29 @@
       50% { transform: translateY(-14px) rotate(1.5deg); }
     }
 
-    .ipod-btn {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-      padding: 5px;
-      opacity: 0.12;
-      transition: opacity 0.3s;
-    }
+  .ipod-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 5px;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
 
     .ipod-btn:hover {
       opacity: 0.6;
     }
 
-    .album-info {
-      flex: 0 1 300px;
-      background: #143f7a;
-      padding: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      border-radius: 0 20px 0 20px;
-    }
+  .album-info {
+    flex: 0 0 300px;
+    background: #143f7a;
+    padding: 20px;
+    margin-left: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 0 20px 0 20px;
+}
 
     .album-info h2 {
       margin: 0 0 4px;
@@ -281,7 +281,8 @@
       display: flex;
       justify-content: center;
       gap: 8px;
-      margin-bottom: 120px;
+      margin-top: -20px;
+      margin-bottom: 75px;
     }
 
     .ipod-dots span {
@@ -379,7 +380,7 @@
         <div class="album-info">
           <h2 id="album-title"></h2>
           <p class="year" id="album-year"></p>
-          <a id="album-link" href="#" target="_blank" rel="noopener">Apple Music</a>
+          <a id="album-link" href="#" target="_blank" rel="noopener">Find Album on Apple Music</a>
         </div>
       </div>
 
@@ -527,7 +528,6 @@
 
     document.querySelector(".prev").addEventListener("click", () => show(index - 1));
     document.querySelector(".next").addEventListener("click", () => show(index + 1));
-    img.addEventListener("click", () => show(index + 1));
 
     show(0);
   </script>
